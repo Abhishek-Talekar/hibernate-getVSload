@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated Feb 19, 2020 11:13:59 PM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="com.gvl.entities">
+	<class name="Person" table="person">
+		<property name="personId" column="person_id"/>
+		<property name="personName" column="person_name"/>
+		<property name="personSurname" column="person_surname"/>
+		<property name="age"/>
+		<property name="emailAddress" column="email_address"/>
+		<property name="mobileNumber" column="mobile_number"/>
+	</class>
+</hibernate-mapping>
