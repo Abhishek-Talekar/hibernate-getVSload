@@ -22,6 +22,7 @@ public class Person implements Serializable{
 		this.personName = personName;
 	}
 	public String getPersonSurname() {
+		
 		return personSurname;
 	}
 	public void setPersonSurname(String personSurname) {
