@@ -9,10 +9,9 @@ public class SessionFactoryRegistry {
 
 	static {
 		try {
-			sessionFactory = new MetadataSources()
-					.buildMetadata(new StandardServiceRegistryBuilder().configure().build()).buildSessionFactory();
-
-		} catch (Throwable e) {
+			sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder().configure().build()).buildMetadata().buildSessionFactory();
+		}
+		catch (Throwable e) {
 			e.printStackTrace();
 		}
 

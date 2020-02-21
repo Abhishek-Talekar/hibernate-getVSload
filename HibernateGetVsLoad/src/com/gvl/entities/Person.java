@@ -45,5 +45,13 @@ public class Person implements Serializable{
 	public void setMobileNumber(String mobileNumber) {
 		this.mobileNumber = mobileNumber;
 	}
+	@Override
+	public String toString() {
+		return "Person [personId=" + personId + ", personName=" + personName + ", personSurname=" + personSurname
+				+ ", emailAddress=" + emailAddress + ", age=" + age + ", mobileNumber=" + mobileNumber + "]";
+	}
+	
+	
+	
 	
 }
