@@ -4,6 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 
+import com.gvl.entities.IPerson;
 import com.gvl.entities.Person;
 import com.gvl.registries.SessionFactoryRegistry;
 
@@ -17,7 +18,7 @@ public class GVLTest {
 
 		// savePerson(session);
 
-		Person person = session.load(Person.class, 2);
+		IPerson person = session.load(IPerson.class, 2);
 		//session.close();
 		
 		System.out.println(person.getAge());
