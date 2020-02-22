@@ -2,7 +2,7 @@ package com.gvl.entities;
 
 import java.io.Serializable;
 
-final public class Person implements Serializable{
+public class Person implements Serializable{
 	protected int personId;
 	protected String personName;
 	protected String personSurname;
