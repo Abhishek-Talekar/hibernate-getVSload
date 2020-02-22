@@ -19,6 +19,7 @@ public class GVLTest {
 
 		Person person = session.load(Person.class, 2);
 		//session.close();
+		
 		System.out.println(person.getAge());
 		System.out.println(person.getClass().getCanonicalName());
 		
