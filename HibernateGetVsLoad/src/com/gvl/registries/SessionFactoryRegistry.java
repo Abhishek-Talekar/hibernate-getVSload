@@ -1,5 +1,8 @@
 package com.gvl.registries;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
@@ -9,9 +12,18 @@ public class SessionFactoryRegistry {
 
 	static {
 		try {
-			sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder().configure().build()).buildMetadata().buildSessionFactory();
-		}
-		catch (Throwable e) {
+			Map<String, String> settings = new HashMap();
+			settings.put("connection.driver_class", "com.mysql.cj.jdbc.Driver");
+			settings.put("connection.url", "jdbc:mysql://localhost:3306/common");
+			settings.put("connection.username", "root");
+			settings.put("connection.password", "root123");
+			settings.put("show_sql", "true");
+			settings.put("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+			settings.put("class", "com.hano.entities.Person");
+
+			sessionFactory = new MetadataSources(new StandardServiceRegistryBuilder().applySettings(settings).build())
+					.buildMetadata().buildSessionFactory();
+		} catch (Throwable e) {
 			e.printStackTrace();
 		}
 
